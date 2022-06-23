@@ -4,15 +4,16 @@
 @import "./base/fonts";
 @import "./base/icons"; 
 @import "./base/zeroing";
-// @import "./base/select";
+@import "./base/select";
 // @import "./base/popup";
-// @import "./base/burger";
+@import "./base/burger";
 @import "./base/ui";
 // libs
 // @import "./libs/";
 // blocks
 @import "./blocks/header";
 @import "./blocks/footer";
+@import "./blocks/hero";
 
 
 // global styles
@@ -37,6 +38,7 @@
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .page {

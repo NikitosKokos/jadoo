@@ -1,0 +1,237 @@
+.hero {
+   min-height: 100vh;
+   padding: 105px 0px 105px 0px;
+
+   @media (max-width: $md3+px){
+      padding: 80px 0px 60px 0px;
+   }
+   @media (max-width: $md4+px){
+      padding: 40px 0;
+   }
+   background: url('../img/mainDecore.png') top right / 50% auto no-repeat;
+
+   @media (max-width: $md3+px){
+      background: url('../img/mainDecore.png') top right / 0% 0% no-repeat;
+   }
+
+   &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('../img/mainDecoreEllipse.png') top right / contain no-repeat;
+      width: 5%;
+      height: 50%;
+      z-index: -1;
+   }
+   &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+   }
+
+   &__text {
+      flex: 0 0 50%;
+      padding: 120px 0px 0px 0px;
+
+      @media (max-width: $md3+px){
+         flex: 1 1 100%;
+      }
+   }
+
+   &__subtitle {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: calc(30 / 20);
+      text-transform: uppercase;
+      color: $orange;
+      margin: 0px 0px 25px 0px;
+      @media (max-width: $md1+px){
+         margin: 0px 0px 15px 0px;
+      }
+      @media (max-width: $md2+px){
+         font-size: 18px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 14px;
+      }
+   }
+
+   &__title {
+      font-family: 'Volkhov';
+      font-weight: 700;
+      font-size: 84px;
+      line-height: 106%;
+      letter-spacing: -0.04em;
+      color: #181E4B;
+      max-width: 545px;
+      margin: 0px 0px 30px 0px;
+
+      @media (max-width: $md1+px){
+         font-size: 75px;
+         margin: 0px 0px 20px 0px;
+      }
+      @media (max-width: $md2+px){
+         font-size: 60px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 70px;
+         max-width: none;
+      }
+      @media (max-width: $md4+px){
+         font-size: 50px;
+      }
+
+      span{
+         display: inline-block;
+         position: relative;
+
+         &:before{
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            left: -14%;
+            width: 175%;
+            height: 12%;
+            background: url('../img/mainArrow.png') 0 0 / contain no-repeat;
+            z-index: -1;
+         }
+      }
+   }
+
+   &__descr {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 188%;
+      color: #5E6282;
+      margin: 0px 0px 35px 0px;
+      max-width: 477px;
+      @media (max-width: $md2+px){
+         font-size: 14px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 16px;
+         max-width: none;
+         margin: 0px 0px 25px 0px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 14px;
+      }
+   }
+
+   &__buttons {
+      display: flex;
+      align-items: center;
+   }
+
+   &__btn {
+      font-family: 'GoogleSans';
+      font-size: 18px;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 26px;
+      height: 60px;
+      background: #F1A501;
+      box-shadow: 0px 20px 35px rgba(241, 165, 1, 0.15);
+      border-radius: 10px;
+      margin: 0px 45px 0px 0px;
+      transition: all .3s ease-in-out;
+
+      @media (max-width: $md2+px){
+         font-size: 16px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 18px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 16px;
+         margin: 0px 15px 0px 0px;
+         padding: 0 20px;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            background: darken(#F1A501, 3)
+         }
+      }
+   }
+
+   &__play {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 17px;
+      color: #686D77;
+
+      @media (max-width: $md2+px){
+         font-size: 16px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 17px;
+      }
+      @media (max-width: $md4+px){
+         font-size: 16px;
+      }
+
+      span{
+         margin: 0px 0px 0px 20px;
+         transition: all .3s ease-in-out;
+
+         @media (max-width: $md4+px){
+            margin: 0px 0px 0px 10px;
+         }
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            color: #DF6951;
+         }
+      }
+   }
+
+   &__play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #DF6951;
+      box-shadow: 0px 15px 30px rgba(223, 105, 81, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg{
+         width: 15px;
+         height: 15px;
+         fill: #fff;
+         @media (max-width: $md4+px){
+            width: 13px;
+            height: 13px;
+         }
+      }
+
+      @media (max-width: $md4+px){
+         width: 45px;
+         height: 45px;
+      }
+   }
+
+   &__img {
+      position: absolute;
+      top: 0;
+      right: -25px;
+      width: 65%;
+      height: auto;
+      img{
+         width: 100%;
+         height: auto;
+         object-fit: contain;
+      }
+
+      @media (max-width: $md3+px){
+         display: none;
+      }
+   }
+}

@@ -2,8 +2,8 @@ function email_test(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
 document.addEventListener('DOMContentLoaded', () => {
-    
-
+   
+   
 }); // end
 let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let forms = document.querySelectorAll('form');
@@ -832,9 +832,47 @@ function gallery_init() {
 	}
 }
 //=================;
-// @ @include('files/burger.js', {});
+const burger = document.querySelector('.burger');
+const headerMenu = document.querySelector('[data-menu]');
+burger.addEventListener("click", () =>{
+    headerMenu.classList.toggle("_active");
+    burger.classList.toggle("_active");
+    document.body.classList.toggle("_lock");
+});;
 // @ @include("files/spoller.js",{});
-// @ @include("files/select.js",{});
+/**
+ * data-state="active" make open current select
+ * data-default set deafault value before initialization
+ */
+
+const selectSingle = document.querySelectorAll('[data-state]');
+const selectSingle_title = document.querySelectorAll('[data-default]');
+
+if (selectSingle) {
+   selectSingle.forEach((element, index) => {
+      const title = selectSingle_title[index];
+
+      title.innerHTML = title.dataset.default;
+
+      // Toggle menu
+      title.addEventListener('click', () => {
+         if ('active' === element.getAttribute('data-state')) {
+            element.setAttribute('data-state', '');
+         } else {
+            element.setAttribute('data-state', 'active');
+         }
+      });
+      let selectSingle_labels = element.querySelectorAll('label');
+      // Close when click to option
+      for (let i = 0; i < selectSingle_labels.length; i++) {
+         selectSingle_labels[i].addEventListener('click', (evt) => {
+            selectSingle_title[index].textContent = evt.target.textContent;
+            element.setAttribute('data-state', '');
+         });
+      }
+   });
+}
+;
 // @ @include("files/tabs.js",{});
 // @ @include("files/sliders.js",{});
     
